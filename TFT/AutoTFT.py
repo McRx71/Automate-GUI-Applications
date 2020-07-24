@@ -15,21 +15,29 @@ def clickImage(imagepath):
     buttonpoint = pyautogui.center(buttonBox)
     pyautogui.mouseDown(buttonpoint,button='left'); pyautogui.mouseUp(buttonpoint,button='left') 
     print(buttonpoint)
-
     return buttonpoint
 
-while True:
-    buttonpoint = clickImage(str('findmatchButton.bmp'))
-    clickImage(str('acceptButton.bmp'))
-    time.sleep(180)
-    pyautogui.mouseDown(buttonpoint,button='left'); pyautogui.mouseUp(buttonpoint,button='left') 
-    buttonpoint = clickImage(str('openMenuButton.bmp'))
-    pyautogui.mouseDown(buttonpoint,button='left'); pyautogui.mouseUp(buttonpoint,button='left') 
-    buttonpoint = clickImage(str('surrenderButton.bmp'))
-    buttonpoint = clickImage(str('surrenderCheckButton.bmp'))
-    time.sleep(2)
-    pyautogui.mouseDown(buttonpoint,button='left'); pyautogui.mouseUp(buttonpoint,button='left') 
-    buttonpoint = clickImage(str('playagainButton.bmp'))
-    pyautogui.moveRel(200, 80)
+
+def main():
+    while True:
+        buttonpoint = clickImage(str('findmatchButton.bmp'))
+        clickImage(str('acceptButton.bmp'))
+        for x in range(2):
+            print('koop')
+            buttonBox = pyautogui.locateOnScreen('acceptButton.bmp', grayscale=True)
+            if buttonBox != None:
+                clickImage(str('acceptButton.bmp'))
+                break
+        time.sleep(120)
+        pyautogui.mouseDown(buttonpoint,button='left'); pyautogui.mouseUp(buttonpoint,button='left')
+        buttonpoint = clickImage(str('openMenuButton.bmp'))
+        pyautogui.mouseDown(buttonpoint,button='left'); pyautogui.mouseUp(buttonpoint,button='left')
+        buttonpoint = clickImage(str('surrenderButton.bmp'))
+        buttonpoint = clickImage(str('surrenderCheckButton.bmp'))
+        time.sleep(2)
+        pyautogui.mouseDown(buttonpoint,button='left'); pyautogui.mouseUp(buttonpoint,button='left')
+        buttonpoint = clickImage(str('playagainButton.bmp'))
+        pyautogui.moveRel(200, 80)
 
 
+main()

@@ -5,12 +5,6 @@ dname = os.path.dirname(abspath)
 os.chdir(dname)
 
 
-def selectChamp():
-    clickImage('random.bmp')
-    
-
-
-
 def clickImage(imagepath):
     buttonBox = (None, None, None, None)
     while not all(buttonBox):
@@ -23,3 +17,13 @@ def clickImage(imagepath):
     pyautogui.mouseDown(buttonpoint, button='left');
     pyautogui.mouseUp(buttonpoint, button='left')
     print(buttonpoint)
+
+def selectChamp():
+    clickImage('random.bmp')
+    clickImage('lockin.bmp')
+
+    
+selectChamp()
+
+
+
