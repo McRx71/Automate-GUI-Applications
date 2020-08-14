@@ -22,7 +22,7 @@ def main():
     while True:
         buttonpoint = clickImage(str('findmatchButton.bmp'))
         clickImage(str('acceptButton.bmp'))
-        for x in range(2):
+        for x in range(180):
             print('koop')
             buttonBox = pyautogui.locateOnScreen('acceptButton.bmp', grayscale=True)
             if buttonBox != None:
