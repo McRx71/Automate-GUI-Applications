@@ -9,7 +9,6 @@ class championAssets:
     def __init__(self, champ):
         self.champ = champ
 
-
     def dlSquareAssets(self):
         self.champ = self.champ.capitalize()
         url = 'http://ddragon.leagueoflegends.com/cdn/10.16.1/img/champion/' + self.champ + '.png'
@@ -35,7 +34,7 @@ class championAssets:
 class champSelect:
     def __init__(self, champ, role):
         self.champ = champ
-        self.role  = role
+        self.role = role
 
     def clickImage(self):
         imgpath = self.champ + '.jpg'
@@ -74,37 +73,21 @@ class champSelect:
             pyautogui.press('enter')
 
 
+input_champ = input()
+input_role = input()
 
-
-
-
-def selectChamp():
-    searchChamp(Champion)
-    clickImage(Champion + '.jpg')
-    clean(Champion)
-    #selectRoleBP('top')
-
-    #clickImage('random.bmp')
-    #clickImage('lockin.bmp')
-
-
-#selectChamp()
-
-input = input()
-
-def fetch(input):
-    champ = championAssets(input)
+def fetch(input_champ):
+    champ = championAssets(input_champ)
     champ.dlSquareAssets()
     champ.resizeAssets()
-    time.sleep(0.1)
     #champ.clean()
 
 
-def select(input):
-    pick = champSelect(input)
-    #pick.searchChamp()
+def select(input_champ ,input_role):
+    pick = champSelect(input_champ, input_role)
+    pick.searchChamp()
     pick.clickImage()
     pick.selectRoleBP()
 
-fetch(input)
-select(input)
+fetch(input_champ)
+select(input_champ)
