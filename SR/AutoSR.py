@@ -72,22 +72,25 @@ class champSelect:
             pyautogui.typewrite(self.role)
             pyautogui.press('enter')
 
-
-input_champ = input()
-input_role = input()
-
-def fetch(input_champ):
-    champ = championAssets(input_champ)
-    champ.dlSquareAssets()
-    champ.resizeAssets()
-    #champ.clean()
+class actions:
+    def __init__(self, input_champ, input_role):
+        self.input_champ = input_champ
+        self.input_role = input_role
 
 
-def select(input_champ ,input_role):
-    pick = champSelect(input_champ, input_role)
-    pick.searchChamp()
-    pick.clickImage()
-    pick.selectRoleBP()
 
-fetch(input_champ)
-select(input_champ)
+    def fetch(self):
+        champ = championAssets(self.input_champ)
+        champ.dlSquareAssets()
+        champ.resizeAssets()
+        #champ.clean()
+
+
+    def select(self):
+        pick = champSelect(self.input_champ,  self.input_role)
+        pick.searchChamp()
+        pick.clickImage()
+        pick.selectRoleBP()
+
+#fetch(input_champ)
+#select(input_champ)

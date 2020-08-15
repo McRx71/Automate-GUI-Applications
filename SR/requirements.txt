@@ -1,0 +1,5 @@
+ pip: 
+    pyautogui pip install PyAutoGUI
+    openvc pip install opencv-python
+    requests pip install requests
+    PIL pip install Pil-Lite
