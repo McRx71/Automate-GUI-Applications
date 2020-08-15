@@ -121,3 +121,9 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+SR/startAGUI.py
+
+SR/AGUI.ui
+
+SR/AGUI.py
