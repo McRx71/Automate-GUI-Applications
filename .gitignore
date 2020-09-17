@@ -127,3 +127,4 @@ SR/startAGUI.py
 SR/AGUI.ui
 
 SR/AGUI.py
+*.bat

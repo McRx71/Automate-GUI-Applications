@@ -90,7 +90,7 @@ class actions:
         pick = champSelect(self.input_champ,  self.input_role)
         pick.searchChamp()
         pick.clickImage()
-        pick.selectRoleBP()
+        #pick.selectRoleBP()
 
 #fetch(input_champ)
 #select(input_champ)
