@@ -1,36 +1,40 @@
 from AutoSR import *
-
 class menu:
 
-    def __init__(self, opt1, opt2):
-        self.opt1 = opt1
-        self.opt2 = opt2
+    def __init__(self, choice):
+       self.choice = choice
 
     def selectScreen(self):
         print('1) Start script')
         print('2) Close')
-        choice = input('Select: 1 or 2: ')
-        if choice == '2':
-            exit()
-        elif choice == '1':
-            choice = True
-        else:
-            choice = False
-        if choice == True:
-            while choice == True:
-                input_champ = input('select your champion: ')
+        print('3) Statistics')
+        self.choice = input('Select: 1 or 2: ')
+        if self.choice == '1':
+            self.choice = True
+        elif self.choice == '2':
+            self.choice = False
+        print(self.choice)
+
+
+
+    def selectScreenLogic(self):
+        if self.choice == True:
+            while self.choice == True:
+                input_champ = input('select your champion: 1')
                 input_role = input('select your role[Not working yet]: ')
                 action = actions(input_champ, input_role)
                 action.fetch()
                 action.select()
-                choice = input('Select another champ?')
-        else:
+                Main()
+        elif self.selectScreen() == False:
             exit()
 
 
-def Main():
-    m = menu(None, None)
-    m.selectScreen()
 
+
+def Main():
+    m = menu(0)
+    m.selectScreen()
+    m.selectScreenLogic()
 
 Main()
