@@ -10,7 +10,7 @@ class statistics:
 
     def connectAPI(self):
         # golbal variables
-        api_key = 'RGAPI-f8dec745-34c7-49a9-a949-e15400b3df41'
+        api_key = ' '
         self.watcher = LolWatcher(api_key)
         self.my_region = 'euw1'
 
