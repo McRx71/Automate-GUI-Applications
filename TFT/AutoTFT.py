@@ -18,7 +18,7 @@ def clickImage(imagepath):
     return buttonpoint
 
 
-def main():
+def tft_main():
     while True:
         buttonpoint = clickImage(str('findmatchButton.bmp'))
         clickImage(str('acceptButton.bmp'))
@@ -40,4 +40,4 @@ def main():
         pyautogui.moveRel(200, 80)
 
 
-main()
+#tft_main()
