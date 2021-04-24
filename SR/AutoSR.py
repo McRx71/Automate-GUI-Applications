@@ -11,7 +11,7 @@ class championAssets:
 
     def dlSquareAssets(self):
         self.champ = self.champ.capitalize()
-        url = 'http://ddragon.leagueoflegends.com/cdn/10.19.1/img/champion/' + self.champ + '.png'
+        url = 'http://ddragon.leagueoflegends.com/cdn/11.2.1/img/champion/' + self.champ + '.png'
         print(url)
         r = requests.get(url, allow_redirects=True)
         open(self.champ + '.png', 'wb').write(r.content)
