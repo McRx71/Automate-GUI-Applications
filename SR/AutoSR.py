@@ -1,4 +1,4 @@
-import pyautogui, os,sys , time, requests
+import pyautogui, os, sys, time, requests
 from PIL import Image
 
 abspath = os.path.abspath(__file__)
@@ -11,7 +11,7 @@ class championAssets:
 
     def dlSquareAssets(self):
         self.champ = self.champ.capitalize()
-        url = 'http://ddragon.leagueoflegends.com/cdn/10.19.1/img/champion/' + self.champ + '.png'
+        url = 'http://ddragon.leagueoflegends.com/cdn/11.8.1/img/champion/' + self.champ + '.png'
         print(url)
         r = requests.get(url, allow_redirects=True)
         open(self.champ + '.png', 'wb').write(r.content)
@@ -43,7 +43,7 @@ class champSelect:
         buttonBox = (None, None, None, None)
         while not all(buttonBox):
             print(buttonBox, imgpath)
-            buttonBox = pyautogui.locateOnScreen(imgpath, grayscale=False, confidence=0.6)
+            buttonBox = pyautogui.locateOnScreen(imgpath, grayscale=False, confidence=0.55)
             if buttonBox == None:
                 buttonBox = (None, None, None, None)
         print(buttonBox)
@@ -56,7 +56,7 @@ class champSelect:
         buttonBox = (None, None, None, None)
         while not all(buttonBox):
             print(buttonBox)
-            buttonBox = pyautogui.locateOnScreen('searchbar.bmp', grayscale=True)
+            buttonBox = pyautogui.locateOnScreen(r"C:\Users\Kiot\Documents\GitHub\Automate-GUI-Applications\SR\searchbar.bmp", grayscale=True)
             if buttonBox == None:
                 buttonBox = (None, None, None, None)
         pyautogui.click(buttonBox)

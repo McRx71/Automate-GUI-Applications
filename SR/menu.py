@@ -39,7 +39,7 @@ class menu:
 					Main()
 				elif self.action == 'statistics':
 					pass
-				elif self.action == 'tft' :
+				elif self.action == 'tft':
 					tft_main()
 				else:
 					exit()
